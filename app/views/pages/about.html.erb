@@ -1,0 +1,13 @@
+<h1>About page coming from pages controller</h1>
+<a href="javascript:history.back()">Go Back</a>
+
+<ul>
+<% @team_members.each do |member| %>
+    <li>👉 <%= member.capitalize %></li>
+<% end %>
+</ul>
+
+<form action="<%= about_path %>" method="get">
+  <input type="text" name="member" placeholder="Who are you looking for?" value="<%= params[:member] %>">
+  <input type="submit">
+</form>
